@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Developer Landing Page" />
+    <meta name="author" content="Anıl Gündüz" />
+    <meta
+      name="keywords"
+      content="developer, website, landing page, html, css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Developer Landing Page</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#">
+          <img src="./img/anil-gunduz-white.png" alt="anil-gunduz-logo" />
+        </a>
+        <ul>
+          <a href="#"><li>Home</li></a>
+        </ul>
+        <div class="buttons">
+          <svg
+            class="openIcon"
+            viewBox="0 0 24 24"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <title>Menu</title>
+            <g
+              id="Page-1"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <g id="Menu">
+                <rect
+                  id="Rectangle"
+                  fill-rule="nonzero"
+                  x="0"
+                  y="0"
+                  width="24"
+                  height="24"
+                ></rect>
+                <line
+                  x1="5"
+                  y1="7"
+                  x2="19"
+                  y2="7"
+                  id="Path"
+                  stroke="#0C0310"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                ></line>
+                <line
+                  x1="5"
+                  y1="17"
+                  x2="19"
+                  y2="17"
+                  id="Path"
+                  stroke="#0C0310"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                ></line>
+                <line
+                  x1="5"
+                  y1="12"
+                  x2="19"
+                  y2="12"
+                  id="Path"
+                  stroke="#0C0310"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                ></line>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </nav>
+      <nav class="dropdown-menu open">
+        <ul>
+          <a href="#"><li>Home</li></a>
+        </ul>
+      </nav>
+      <nav class="description-nav">
+        <div>
+          <p>I'm</p>
+          <ul>
+            <li><h1>Anıl</h1></li>
+            <li><h1>Frontend</h1></li>
+            <li><h1>Web3</h1></li>
+            <li><h1>Developer</h1></li>
+          </ul>
+        </div>
+        <p>
+          Hello, I'm Anıl 👋 I work as a <span>Frontend Developer</span> I
+          create projects using HTML, CSS, JavaScript, ReactJS, NextJS & Web3
+          coding. With this project I've <span>built using HTML & CSS</span> I'm
+          advancing the process from the very beginning🚀
+        </p>
+        <div class="social-media">
+          <a id="li" href="https://www.linkedin.com/in/anilgunduuz/"><button>LinkedIn</button></a>
+          <a id="gh" href="https://github.com/agunduuz"><button>GitHub</button></a>
+          <a id="m" href="https://medium.com/@anil.gunduuz"><button>Medium</button></a>
+        </div>
+      </nav>
+    </header>
+
+    <script>
+      const buttons = document.querySelector(".buttons");
+      const buttonsIcon = document.querySelector(".buttons svg");
+      const dropdownMenu = document.querySelector(".dropdown-menu");
+
+      buttons.onclick = function () {
+        dropdownMenu.classList.toggle("open");
+        const isOpen = dropdownMenu.classList.contains("open");
+        buttonsIcon.classList = isOpen ? "closeIcon" : "openIcon";
+      };
+    </script>
+  </body>
+</html>

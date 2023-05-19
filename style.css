@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+:root{
+    --main-color: #293f32;
+    --second-color: #e9a72c;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand';
+    font-size: 16px;
+    box-sizing: border-box;
+}
+header {
+    background-image: url(./img/anil-gunduz-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 50%;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 66%;
+    padding: 1rem 0;
+}
+header nav a img {width: 5rem;}
+header nav ul {
+    display: flex;
+    align-items: center;
+}
+header nav ul a {
+    text-decoration: none;
+    list-style: none;
+    color: #ffff;
+    padding: 0.5rem 1.25rem;
+    margin-left: 1rem;
+    transition: 0.3s;
+}
+header nav ul a:active,a:focus,a:hover{
+    color: var(--second-color);
+}
+header nav ul a li {font-size: 1.25rem;}
+header nav div.buttons {
+    width: 2rem;
+    filter: invert(1);
+    cursor: pointer;
+    display: none;
+}
+
+
+/* DROPDOWN MENU */
+header nav.dropdown-menu{
+    display: none;
+    position: absolute;
+    height: 0;
+    right: 4.5rem;
+    top: 6rem;
+    max-width: 525px;
+    background: rgba(255, 255, 255,0.1);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    border-radius: 15px;
+    transition: height .2s cubic-bezier(0.165, 0.8854, 0.32, 1.25);
+    padding: 0;
+}
+header nav.dropdown-menu.open{
+    height: auto;
+}
+header nav.dropdown-menu ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 0;
+}
+
+header nav.description-nav {
+    height: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+}
+header nav.description-nav div{
+    display: flex;
+    align-items: baseline;
+}
+header nav.description-nav div p{
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 300;
+    width: auto;
+}
+header nav.description-nav ul {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    list-style: none;
+    margin-left: 1rem;
+    height: 85px;
+    line-height: 90px;
+    overflow: hidden;
+}
+header nav.description-nav ul li{
+    animation: slide 6s steps(4) infinite;
+    position: relative;
+    top: 0;
+}
+@keyframes slide{
+    100%{
+        top: -360px;
+    }
+}
+
+header nav.description-nav ul li h1{
+    font-size: 6rem;
+    font-weight: 600;
+    color: var(--second-color);
+    position: relative;
+    text-transform: uppercase;
+}
+header nav.description-nav ul li h1::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-color);
+    border-left: 2px solid rgb(233, 167, 44);
+    animation: writing 1.5s steps(17) infinite;
+}
+header nav.description-nav p{
+    width: 50%;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+header nav.description-nav p span{
+    color: var(--second-color);
+    font-weight: 500;
+}
+@keyframes writing{
+    100%{
+        left: 110%;
+        margin: 0 -25px 0 35px;
+    }
+}
+
+header nav.description-nav div.social-media {
+    margin-top: 1rem;
+    flex-direction: column;
+}
+header nav.description-nav div.social-media a button {
+    width: 200px;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 2px solid;
+    background-color: transparent;
+    color: #fff;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+header nav.description-nav div.social-media a#li button:hover{
+    color: #65c2e7;
+}
+header nav.description-nav div.social-media a#gh button:hover{
+    color: #cfe765;
+}
+header nav.description-nav div.social-media a#m button:hover{
+    color: #e77465;
+}
+
+/* RESPONSIVE */
+@media (max-width:1400px) {
+    header nav {
+        width: 90%;
+        padding: 1.5rem;
+    }
+    header nav ul{
+        display: none;
+    }
+    header nav div.buttons {
+        display: block;
+    }
+    header nav.dropdown-menu{
+        display: block;
+        width: 80%;
+    }
+
+    header nav.description-nav p{
+        font-size: 1.5rem;
+        width: 66%;
+    }
+    header nav.description-nav p span{
+        font-size: 1.5rem;
+    }
+
+}
+@media (max-width:992px) {
+    header nav {
+        width: 90%;
+        padding: 1.5rem;
+    }
+    header nav ul{
+        display: none;
+    }
+    header nav div.buttons {
+        display: block;
+    }
+    header nav.dropdown-menu{
+        display: block;
+        width: 80%;
+        top: 6.5rem;
+    }
+    header nav.description-nav ul li h1{
+        font-size:4rem;
+    }
+    header nav.description-nav p{
+        font-size: 1.5rem;
+        width: 100%;
+    }
+    header nav.description-nav p span{
+        font-size: 1.5rem;
+    }
+
+}
+@media (max-width:576px){
+
+    header nav{
+        width: 100%;
+    }
+    header nav a img {width: 3rem;}
+    header nav.dropdown-menu{
+        left: 4.5rem;
+        top: 7rem;
+        width: unset;
+    }
+    header nav.description-nav div p{
+        font-size: 2rem;
+    }
+    header nav.description-nav ul {
+        margin-left: .5rem;
+    }
+    header nav.description-nav ul li h1{
+        font-size: 2rem;
+    }
+    header nav.description-nav p{
+        font-size: 1rem;
+        width: 100%;
+    }
+    header nav.description-nav p span{
+        font-size: 1rem;
+    }
+}
